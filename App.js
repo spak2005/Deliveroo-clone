@@ -10,7 +10,7 @@ export default function App() {
     <NavigationContainer>
         <Stack.Navigator>
           {/* Screens */}
-          <Stack.Screen name='Home' component={HomeScreen}></Stack.Screen>
+          <Stack.Screen name='Home' component={HomeScreen} options={{headerShown:false}}></Stack.Screen>
         </Stack.Navigator>
     </NavigationContainer>
   );

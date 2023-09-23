@@ -9,34 +9,25 @@ import {
 } from "react-native-heroicons/outline"
 import Categories from '../components/Categories'
 import FeaturedRows from '../components/FeaturedRows'
-import client from '../sanity'
+// import client from '../sanity'
 
 
 const HomeScreen = () => {
   const navigation = useNavigation()
   const [featuredCategories, setFeaturedCategories] = useState([])
 
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      headerTitle:'Testing',
-      headerShown:false
-    })
-  },[])
+
+  // I USED THIS TO REMOVE THE REACT NATIVE HEADER FROM THE PAGE
+  // BUT THEN I DECIDED TO USE 
+  // useLayoutEffect(() => {
+  //   navigation.setOptions({
+  //     headerTitle:'Testing',
+  //     headerShown:false
+  //   })
+  // },[])
 
   useEffect(() => {
-    client
-    .fetch( `
-    *[_type == "featured"] {
-      ...,
-      restaurants[]->{
-        ...,
-        dishes[] ->
-      }
-    }`
-    )
-    .then((data) => {
-      setFeaturedCategories(data);
-    });
+    // client.fetch
   }, [])
 
   console.log(featuredCategories)
